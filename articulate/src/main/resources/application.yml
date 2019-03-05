@@ -20,7 +20,9 @@ info:
     version: @project.version@
 
 management:
-  security:
-    enabled: false
+  endpoint:
+    health:
+      show-details: always
+
   cloudfoundry:
     skip-ssl-validation: true

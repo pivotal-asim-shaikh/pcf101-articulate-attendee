@@ -39,7 +39,7 @@ resources:
 - name: resource-git
   type: git
   source:
-    uri: https://github.com/brightzheng100/pcf101-articulate-attendee
+    uri: https://github.com/pivotal-asim-shaikh/pcf101-articulate-attendee
     branch: master
 
 # CF

@@ -4,4 +4,4 @@ applications:
   instances: 2
   memory: 800M
   routes:
-  - route: articulate-bright.cfapps.io
+  - route: articulate-bright.apps.fbi.avnexs.com

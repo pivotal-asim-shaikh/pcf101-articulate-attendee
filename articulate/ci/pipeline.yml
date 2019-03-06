@@ -26,9 +26,9 @@ jobs:
       current_app_name: ((app-name))
   
   # Verify the app whether it's been successfully deployed
-  - get: image-javagradlegitpack
+  - get: linux-image
   - task: smoke-tests
-    image: image-javagradlegitpack
+    image: linux-image
     file: resource-git/articulate/ci/tasks/smoke-tests.yml
     params:
       app_url: ((app_url))
@@ -37,9 +37,9 @@ jobs:
 resources:
 # GIT
 - name: resource-git
-  type: git
+  type: git 
   source:
-    uri: https://github.com/pivotal-asim-shaikh/pcf101-articulate-attendee
+    uri: https://github.com/pivotal-asim-shaikh/pcf101-articulate-attendee.git
     branch: master
 
 # CF
@@ -53,10 +53,7 @@ resources:
     space: ((pcf-space))
     skip_cert_check: true
 
-# Custom Image
-- name: image-javagradlegitpack
+- name: linux-image
   type: docker-image
   source:
-    repository: ((docker_image))
-    insecure_registries: ((docker_insecure_registries))
-    tag: latest
+    repository: itstarting/javagradlegitpack
